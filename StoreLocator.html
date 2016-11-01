@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="layout.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<ol class="breadcrumb">
+ <li><a href="#/home">Home</a></li>
+ <li class="active">Store Locator</li>
+</ol>
+
+<div class="fluid-container jumbotron">
+	<div class="row">
+	  <div class="col-sm-5">
+	 	<h2>Contact Us</h2>
+      		<p><span class="glyphicon glyphicon-map-marker"></span> Jagsonpal Market,1520-15,Ground Floor,Bhagirath Palace, Chandni Chowk,Delhi</p>
+     		<p><span class="glyphicon glyphicon-phone"></span> +91 9212052409</p>
+      		<p><span class="glyphicon glyphicon-envelope"></span> anujjain80@yahoo.com</p>			
+	</div>	
+	 <div class="col-sm-7">
+		<div id="googleMap" style="height:400px;width:100%;">
+		</div>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(28.6572676, 77.23414639999999);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:12,
+  scrollwheel:false,
+  draggable:false,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+	</div>	
+		
+	</div>
+</div>
+</body>
+</html>
