@@ -1,0 +1,48 @@
+Use KayceePharma
+
+IF ( OBJECT_ID('dbo.sp_User_INS') IS NOT NULL ) 
+   DROP PROCEDURE dbo.sp_User_INS
+GO
+
+CREATE PROCEDURE dbo.sp_User_INS
+        
+       @fname                      	VARCHAR(40)       , 
+       @lname                  		VARCHAR(40)       , 
+       @emailId                  	VARCHAR(30)       , 
+       @phnno				INT		  , 
+       @password                        Varchar(15)       , 
+       @Date_Created                    datetime	  ,
+	@Last_Login_date			datetime	  ,
+       @active_yn                 	int
+AS 
+BEGIN 
+     SET NOCOUNT ON 
+
+     INSERT INTO dbo.User
+          ( 
+            userid                   ,
+            fname                    ,
+            lname                   ,
+            email                   ,
+            phnno                   ,
+            password                ,
+		Date_Created	,
+            Last_Login_date      ,
+	active_yn
+		            
+          ) 
+     VALUES 
+          ( 
+           @fname              , 
+       @lname                  , 
+       @emailId                , 
+       @phnno			, 
+       @password               , 
+       @Date_Created  ,
+	@Last_Login_date,
+       @active_yn  
+          ) 
+
+END 
+
+GO
